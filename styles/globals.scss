@@ -1,20 +1,3 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 $primaryColor : #40e693;
 $HeadingColor : #100C2E;
 $logoColor : #fff;
@@ -25,9 +8,7 @@ $hoverColor : #c4ffd9;
 $secondaryFont : #1D976C;
 
 
-//preloader
-
-@import  url(https://fonts.googleapis.com/css?family=Montserrat);
+//Pre preLoader
 
 $width: 15px;
 $height: 15px;
@@ -97,6 +78,15 @@ $bounce_height: 30px;
   }
 }
 
+//Error Page 
+
+.ErrorPage{
+  padding:150px 20px;
+  width: 80%;
+  min-height:600px;
+  margin:0px auto;
+  text-align:center;
+}
 //navbar part
 
 .NavbarMain{
@@ -106,6 +96,11 @@ $bounce_height: 30px;
   position:fixed;
   z-index:1001;
   overflow:hidden;
+
+  .NavContainer{
+    width:90%;
+    margin:0px auto;
+    height:100%;
   
   .navHead{
     width:100%;
@@ -113,17 +108,18 @@ $bounce_height: 30px;
     
     .navHeadLogo{
       width:100%;
+      margin-top: -20px;
 
-      .logo_img{
+      .logoIimg{
         height: 100px;
         width: 250px;
-        margin-top: -20px;
       }
     }
-    .navHeadMenu{
-      width:20%;
-      display:none;
-    }
+  }
+  
+  .navHeadMenu{
+    width:20%;
+    display:none;
   }
   
   h2{
@@ -132,11 +128,6 @@ $bounce_height: 30px;
     color:$logoColor;
     margin:0px;
   }
-  
-  .NavContainer{
-    width:90%;
-    margin:0px auto;
-    height:100%;
     
     .NavList{
        width:100%;

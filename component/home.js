@@ -68,59 +68,71 @@ const Home = () => {
       }
 
     return(
-        <div className="homeListContainer">
-            <div className="row">
-                <div className="col-md-8">
-                { ListTopdata.map((itm,k) => {
-                        if(k === 0 || k === 1  ){
-                            return(
-                                <div className="card_top_home">
-                                    <Link href={`/Blog/${itm.category}/${itm.url}`}  >
-                                      <a>
-                                        <div className="category">{ itm.category }</div>
-                                        <h4>{ itm.title }</h4>
-                                        <div className="byAuth">
-                                            - by {itm.auther}
-                                            <small>{moment(itm.createdOn).fromNow()}</small>
-                                        </div>
-                                        <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
-                                        <p>{ itm.preheading } </p>
-                                      </a>  
-                                    </Link>
-                                </div>    
-                        )
-                        }
-                    })
-                    }
-                </div>
-                <div className="col-md-4">
-                { ListTopdata.map((itm,k) => {
-                        if(k > 1 && k < 5 ){
-                            return(
-                                <div className="card_top_sub_home">
-                                    <Link href={`/Blog/${itm.category}/${itm.url}`}  >
-                                       <a>
-                                            <p className="category">{ itm.category }</p>
-                                            <h4>{ itm.title }</h4>
-                                            <div className="byAuth">
-                                                - by {itm.auther} 
-                                                <small>{ moment(itm.createdOn).fromNow() }</small>
-                                            </div>
-                                            <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
-                                       </a>
-                                    </Link>
-                                </div>    
-                            )
-                        }
-                    })
-                    }
-                </div>
-                <div className="col-md-12 midAbout">
-                    <p>About TechIdiots</p>
-                    <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
+        <>
+        <div className={(FetchStatus) ? "preLoader" : "preNone" } >
+            <div className="wrap">
+                <div className="loading">
+                    <div className="bounceball"></div>
+                    <div className="text">Fetching</div>
                 </div>
             </div>
         </div>
+        <div className="contMain">
+            <div className="homeListContainer">
+                <div className="row">
+                    <div className="col-md-8">
+                    { ListTopdata.map((itm,k) => {
+                            if(k === 0 || k === 1  ){
+                                return(
+                                    <div className="card_top_home">
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                        <a>
+                                            <div className="category">{ itm.category }</div>
+                                            <h4>{ itm.title }</h4>
+                                            <div className="byAuth">
+                                                - by {itm.auther}
+                                                <small>{moment(itm.createdOn).fromNow()}</small>
+                                            </div>
+                                            <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                            <p>{ itm.preheading } </p>
+                                        </a>  
+                                        </Link>
+                                    </div>    
+                            )
+                            }
+                        })
+                        }
+                    </div>
+                    <div className="col-md-4">
+                    { ListTopdata.map((itm,k) => {
+                            if(k > 1 && k < 5 ){
+                                return(
+                                    <div className="card_top_sub_home">
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                        <a>
+                                                <p className="category">{ itm.category }</p>
+                                                <h4>{ itm.title }</h4>
+                                                <div className="byAuth">
+                                                    - by {itm.auther} 
+                                                    <small>{ moment(itm.createdOn).fromNow() }</small>
+                                                </div>
+                                                <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                        </a>
+                                        </Link>
+                                    </div>    
+                                )
+                            }
+                        })
+                        }
+                    </div>
+                    <div className="col-md-12 midAbout">
+                        <p>About TechIdiots</p>
+                        <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </>
     )
 }
 
