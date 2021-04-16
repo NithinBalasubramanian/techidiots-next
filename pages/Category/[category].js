@@ -45,9 +45,11 @@ const Category = () => {
             </div>
             <Head>
                 <title>Techidiots - The collection of Tech for Techies</title>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta charset="utf-8" />
                 <meta name="description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
                
-                <meta property="og:image" content="https://techidiots.in/favicon.jpg"/>
+                <meta property="og:image" content="/favicon.jpg"/>
                 <meta property="og:url" content="https://techidiots.in"/>
                 <meta property="og:site_name" content="www.techidiots.in"/>
                 <meta property="og:type" content="website" />
@@ -59,6 +61,16 @@ const Category = () => {
                 <meta property="twitter:image" content="https://techidiots.in/favicon.jpg" />
                 <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
                 <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
+            
+                <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+                <meta name="theme-color" content="#000000"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="author" content="Techidiots - Pingifinit"/>
+                <meta name="publisher" content="Techidiots - Pingifinit"/>
+                <meta name="owner" content="Techidiots - Pingifinit"/>
+                <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
+                
+                <meta name="facebook-domain-verification" content="q5r5o0qa0x8ohoxlhfp1xf5itrgkm7" />
             </Head>
             <div className="contMain">
                 <div className="homeListContainer">

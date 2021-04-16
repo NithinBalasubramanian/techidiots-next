@@ -66,10 +66,13 @@ const BlogHead = () => {
                           
                         <Head>
                             <title>{itm.title}</title>
+                            
+                            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                            <meta charset="utf-8" />
                             <meta name="description" content={itm.preheading} />
                             <link rel="canonical" href={ 'https://techidiots.in/'+blogHead+'/'+blogCont } />
 
-                            <meta property="og:image" content="https://techidiots.in/favicon.jpg"/>
+                            <meta property="og:image" content="/favicon.jpg"/>
                             <meta property="og:url" content={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
                             <meta property="og:site_name" content="www.techidiots.in"/>
                             <meta property="og:type" content="website" />
@@ -81,6 +84,14 @@ const BlogHead = () => {
                             <meta property="twitter:image" content="https://techidiots.in/favicon.jpg" />
                             <meta property="twitter:title" content={itm.title} />
                             <meta property="twitter:description" content={itm.preheading} />
+
+                            <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+                            <meta name="theme-color" content="#000000"/>
+                            <meta name="robots" content="index,follow"/>
+                            <meta name="author" content="Techidiots - Pingifinit"/>
+                            <meta name="publisher" content="Techidiots - Pingifinit"/>
+                            <meta name="owner" content="Techidiots - Pingifinit"/>
+                            <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
                         </Head>
                           <div className="col-md-6">
                               <div className="category">
