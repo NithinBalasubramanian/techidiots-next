@@ -130,6 +130,94 @@ const Home = () => {
                         <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
                     </div>
                 </div>
+                <div className="row">
+                     <div className="col-md-6">
+                         <h4 className="listHeading"><u>LATEST TECH ARTICLES</u></h4>
+                        { ListInfo.map((itm,k) => {
+                         return(
+                           <Link href={`/Blog/${itm.category}/${itm.url}`}  className="articleViewHome">
+                             <a>
+                                <div className="articleImage">
+                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                </div>
+                                <div className="articleCont">
+                                  <small>{ moment(itm.createdOn).fromNow() }</small>
+                                  <h4>{ itm.title }</h4>
+                                </div>
+                              </a>
+                         </Link>
+                         )
+                        })
+                       }
+                      </div>
+                     <div className="col-md-6">
+                     <h4 className="listHeading"><u>LATEST TECH NEWS </u></h4>
+                        { ListNews.map((itm,k) => {
+                         return(
+                           <Link href={`/Blog/${itm.category}/${itm.url}`}  className="articleViewHome">
+                            <a>
+                                <div className="articleImage">
+                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                </div>
+                                <div className="articleCont">
+                                  <small>{ moment(itm.createdOn).fromNow() }</small>
+                                  <h4>{ itm.title }</h4>
+                                </div>
+                            </a>
+                         </Link>
+                         )
+                        })
+                       }
+                      </div>
+                   </div>
+                  <h4 className="listHeading"><u>TECH COLLECTIONS</u></h4>
+                  <div className="row">
+                              { Listdata.map((itm,k) => {
+                            if(k === 0 || k === 1 || k === 5 || k === 6 ){
+                                return(
+                                <div className="col-md-6 card_col" >
+                                    <div className="card_home">
+                                            <div className="category">
+                                                { itm.category }
+                                            </div>
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                           <a>
+                                            <img src={itm.imgUrl} alt={ itm.title } width="100%" height="300px" /> 
+                                            <div className="byAuth">
+                                                - by {itm.auther} 
+                                                <small>{ moment(itm.createdOn).fromNow() }</small>
+                                            </div>
+                                            <h4>{ itm.title }</h4>
+                                            <p>{ itm.preheading } </p>
+                                          </a>
+                                        </Link>
+                                    </div>                        
+                                </div>
+                                )
+                            }
+                            return(
+                                <div className="col-md-4 card_col">
+                                    <div className="card_home">
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                            <a>
+                                                <div className="category">
+                                                    { itm.category }
+                                                </div>
+                                                <img src={itm.imgUrl} alt={ itm.title } width="100%" height="250px" /> 
+                                                <div className="byAuth">
+                                                - by {itm.auther} 
+                                                    <small>{ moment(itm.createdOn).fromNow() }</small>
+                                                </div>
+                                                <h4>{ itm.title }</h4>
+                                                <p>{ itm.preheading } </p>
+                                             </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                                )
+                            })
+                        }
+                   </div>
             </div>
         </div>
      </>
