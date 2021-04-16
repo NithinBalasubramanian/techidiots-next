@@ -1,7 +1,9 @@
+import Head from 'next/head'
 import React , { useState , useEffect } from 'react';
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
 import moment from 'moment';
+import { useRouter } from 'next/router'
 
 const Home = () => {
 
@@ -14,6 +16,8 @@ const Home = () => {
     let [ ListTopdata , setListTopdata ] = useState([]);
   
     let [ FetchStatus , setFetchStatus ] = useState(true);
+
+    const { asPath } = useRouter()
   
       useEffect(() => {
           window.scrollTo(0, 0);
@@ -77,6 +81,24 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <Head>
+            <title>Techidiots - The collection of Tech for Techies</title>
+            <meta name="description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
+            <link rel="canonical" href="https://techidiots.in" />
+
+            <meta property="og:image" content="https://techidiots.in/favicon.jpg"/>
+            <meta property="og:url" content="https://techidiots.in"/>
+            <meta property="og:site_name" content="www.techidiots.in"/>
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="TechIdiots - The Collections of Tech for Techies"/>
+            <meta property="og:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
+
+            <meta property="twitter:url" content="https://techidiots.in/" />
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:image" content="https://techidiots.in/favicon.jpg" />
+            <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
+            <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
+        </Head>
         <div className="contMain">
             <div className="homeListContainer">
                 <div className="row">
@@ -135,8 +157,8 @@ const Home = () => {
                          <h4 className="listHeading"><u>LATEST TECH ARTICLES</u></h4>
                         { ListInfo.map((itm,k) => {
                          return(
-                           <Link href={`/Blog/${itm.category}/${itm.url}`}  className="articleViewHome">
-                             <a>
+                           <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                             <a className="articleViewHome">
                                 <div className="articleImage">
                                   <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
                                 </div>
@@ -154,8 +176,8 @@ const Home = () => {
                      <h4 className="listHeading"><u>LATEST TECH NEWS </u></h4>
                         { ListNews.map((itm,k) => {
                          return(
-                           <Link href={`/Blog/${itm.category}/${itm.url}`}  className="articleViewHome">
-                            <a>
+                           <Link href={`/Blog/${itm.category}/${itm.url}`} >
+                            <a  className="articleViewHome">
                                 <div className="articleImage">
                                   <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
                                 </div>
