@@ -94,6 +94,47 @@ const Category = () => {
                             <h1> Techidiots / { category }</h1>
                         </div>
                     </div>
+                    <div className="row">
+                         { Listdata.map((itm,k) => {
+                            if(k === 5 || k === 6 || k === 10 || k === 11 || k === 15 || k=== 16){
+                                return(
+                                <div className="col-md-6 card_col" >
+                                    <div className="card_home">
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                           <a>
+                                            <img src={itm.imgUrl} alt={ itm.title } width="100%" height="300px" /> 
+                                            <div className="byAuth">
+                                                - From {itm.auther} 
+                                            </div>
+                                            <h4>{ itm.title }</h4>
+                                            <p>{ itm.preheading } </p>
+                                          </a>
+                                        </Link>
+                                    </div>                        
+                                </div>
+                                )
+                            }
+                          if(k > 4){
+                            return(
+                                <div className="col-md-4 card_col">
+                                    <div className="card_home">
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                           <a>
+                                            <img src={itm.imgUrl} alt={ itm.title } width="100%" height="250px" /> 
+                                            <div className="byAuth">
+                                            - From {itm.auther} 
+                                            </div>
+                                            <h4>{ itm.title }</h4>
+                                            <p>{ itm.preheading } </p>
+                                           </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                                )
+                              }
+                            })
+                        }
+                   </div>
                 </div>
             </div>
         </>
