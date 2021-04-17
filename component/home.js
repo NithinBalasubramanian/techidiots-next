@@ -118,7 +118,7 @@ const Home = () => {
             <meta name="msapplication-TileColor" content="#da532c">
                 
                   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H2GGK5SRV"></script>
-                  <script>
+                  <script
                     dangerouslySetInnerHTML={{
                         __html: `window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
@@ -127,7 +127,7 @@ const Home = () => {
                         gtag('config', 'G-3H2GGK5SRV');
                         ',
                        }   }
-                  </script>
+                  />
                 
         </Head>
         <div className="contMain">
