@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Document, { Html, Head, Main, NextScript } from "next/document"
 import React , { useState , useEffect } from 'react';
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
@@ -115,6 +116,18 @@ const Home = () => {
             <link rel="manifest" href="/site.webmanifest">
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
             <meta name="msapplication-TileColor" content="#da532c">
+                
+                  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H2GGK5SRV"></script>
+                  <script>
+                    dangerouslySetInnerHTML={{
+                        __html: `window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-3H2GGK5SRV');
+                        ',
+                       }   }
+                  </script>
                 
         </Head>
         <div className="contMain">
