@@ -43,9 +43,11 @@ const BlogHead = () => {
 
     useEffect(()=>{
         setFetchStatus(true);
-        Fetchdata();
-        FetchdataNot();
         window.scrollTo(0, 0);
+        Fetchdata();
+        const timer = setTimeout(() => {
+            FetchdataNot();
+          }, 2000);
     }, [blogCont]) 
 
     return(
