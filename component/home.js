@@ -110,12 +110,12 @@ const Home = () => {
             <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
             <meta name="facebook-domain-verification" content="q5r5o0qa0x8ohoxlhfp1xf5itrgkm7" />
                     
-            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
-            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-            <link rel="manifest" href="/site.webmanifest">
-            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-            <meta name="msapplication-TileColor" content="#da532c">
+            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+            <link rel="manifest" href="/site.webmanifest" />
+            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+            <meta name="msapplication-TileColor" content="#da532c" />
                 
                   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H2GGK5SRV"></script>
                   <script
@@ -125,7 +125,7 @@ const Home = () => {
                         gtag('js', new Date());
 
                         gtag('config', 'G-3H2GGK5SRV');
-                        ',
+                        `,
                        }   }
                   />
                 
@@ -185,7 +185,7 @@ const Home = () => {
                 </div>
                 <div className="row">
                      <div className="col-md-6">
-                         <h4 className="listHeading"><u>LATEST TECH ARTICLES</u></h4>
+                         <h4 className="listHeading"><b>LATEST TECH ARTICLES</b></h4>
                         { ListInfo.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`}  >
@@ -204,7 +204,7 @@ const Home = () => {
                        }
                       </div>
                      <div className="col-md-6">
-                     <h4 className="listHeading"><u>LATEST TECH NEWS </u></h4>
+                     <h4 className="listHeading"><b>LATEST TECH NEWS </b></h4>
                         { ListNews.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`} >
@@ -223,7 +223,7 @@ const Home = () => {
                        }
                       </div>
                    </div>
-                  <h4 className="listHeading"><u>TECH COLLECTIONS</u></h4>
+                  <h4 className="listHeading"><b>TECH COLLECTIONS</b></h4>
                   <div className="row">
                               { Listdata.map((itm,k) => {
                             if(k === 0 || k === 1 || k === 5 || k === 6 ){
