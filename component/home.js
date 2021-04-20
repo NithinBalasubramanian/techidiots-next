@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Document, { Html, Head, Main, NextScript } from "next/document"
+import Document, { Html,  Main, NextScript } from "next/document"
 import React , { useState , useEffect } from 'react';
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
