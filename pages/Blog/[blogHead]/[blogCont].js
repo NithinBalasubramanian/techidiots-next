@@ -121,7 +121,7 @@ const BlogHead = () => {
                               <small>{ moment(itm.createdOn).fromNow() }</small>
                               </div>
                               {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
-                              <img src={itm.imgUrl} alt={ itm.title } width="100%" height="auto" /> 
+                              <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%" height="auto" /> 
                               
                                <div className="contentDisp">
                                   <p className="paraMainCont">{itm.blog}</p>
@@ -137,7 +137,7 @@ const BlogHead = () => {
                                               ) 
                                           }else if(sub_itm.SubHeading === 'sub_img'){
                                               return (
-                                                  <img src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
+                                                  <img loading="lazy" src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
                                               ) 
                                           }else if(sub_itm.SubHeading === 'tweet'){
                                               return (
@@ -201,7 +201,7 @@ const BlogHead = () => {
                                   <div className="card_recent ">
                                       <Link href={ `/Blog/${itm.category}/${itm.url}` }  >
                                         <a>
-                                          <img src={itm.imgUrl} width="100%" height="150px" alt=""></img>
+                                          <img loading="lazy" src={itm.imgUrl} width="100%" height="150px" alt=""></img>
                                           <h5>{itm.title}</h5>
                                         </a>
                                       </Link>
