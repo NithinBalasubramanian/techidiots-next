@@ -146,7 +146,7 @@ const Home = () => {
                                                 - by {itm.auther}
                                                 <small>{moment(itm.createdOn).fromNow()}</small>
                                             </div>
-                                            <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                            <img src={itm.imgUrl} loading="lazy" alt={ itm.title } width="100%"  /> 
                                             <p>{ itm.preheading } </p>
                                         </a>  
                                         </Link>
@@ -169,7 +169,7 @@ const Home = () => {
                                                     - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
                                                 </div>
-                                                <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                                <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  /> 
                                         </a>
                                         </Link>
                                     </div>    
@@ -191,7 +191,7 @@ const Home = () => {
                            <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                              <a className="articleViewHome">
                                 <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy"  width="100%" height="100%"  /> 
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -210,7 +210,7 @@ const Home = () => {
                            <Link href={`/Blog/${itm.category}/${itm.url}`} >
                             <a  className="articleViewHome">
                                 <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="100%"  /> 
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -235,7 +235,7 @@ const Home = () => {
                                             </div>
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                                            <a>
-                                            <img src={itm.imgUrl} alt={ itm.title } width="100%" height="300px" /> 
+                                            <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="300px" /> 
                                             <div className="byAuth">
                                                 - by {itm.auther} 
                                                 <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -256,7 +256,7 @@ const Home = () => {
                                                 <div className="category">
                                                     { itm.category }
                                                 </div>
-                                                <img src={itm.imgUrl} alt={ itm.title } width="100%" height="250px" /> 
+                                                <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="250px" /> 
                                                 <div className="byAuth">
                                                 - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
