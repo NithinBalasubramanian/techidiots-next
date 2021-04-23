@@ -156,7 +156,7 @@ const Home = () => {
                         })
                         }
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 topSideList">
                     { ListTopdata.map((itm,k) => {
                             if(k > 1 && k < 5 ){
                                 return(
