@@ -82,7 +82,7 @@ const BlogHead = () => {
                             <meta property="og:title" content={itm.title} />
                             <meta property="og:description" content={itm.preheading}/>
 
-                            <meta property="twitter:url" content="https://techidiots.in/" />
+                            <meta property="twitter:url" content={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
                             <meta property="twitter:card" content="summary_large_image" />
                             <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
                             <meta property="twitter:title" content={itm.title} />
@@ -94,7 +94,7 @@ const BlogHead = () => {
                             <meta name="author" content="Techidiots - Pingifinit"/>
                             <meta name="publisher" content="Techidiots - Pingifinit"/>
                             <meta name="owner" content="Techidiots - Pingifinit"/>
-                            <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
+                            <meta name="keywords" content={ (itm.key) ? itm.key : "Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech" } />
                             
                             <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
                             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
