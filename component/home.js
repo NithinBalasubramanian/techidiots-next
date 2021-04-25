@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Document, { Html , Main, NextScript } from "next/document"
 import React , { useState , useEffect } from 'react';
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
@@ -117,17 +116,7 @@ const Home = () => {
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
             <meta name="msapplication-TileColor" content="#da532c" />
                 
-                  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3H2GGK5SRV"></script>
-                  <script
-                    dangerouslySetInnerHTML= {{
-                        __html: `window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-
-                        gtag('config', 'G-3H2GGK5SRV');
-                        `,
-                       }   }
-                  />
+                  
                 
         </Head>
         <div className="contMain">
@@ -146,7 +135,7 @@ const Home = () => {
                                                 - by {itm.auther}
                                                 <small>{moment(itm.createdOn).fromNow()}</small>
                                             </div>
-                                            <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                            <img src={itm.imgUrl} loading="lazy" alt={ itm.title } width="100%"  /> 
                                             <p>{ itm.preheading } </p>
                                         </a>  
                                         </Link>
@@ -169,7 +158,7 @@ const Home = () => {
                                                     - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
                                                 </div>
-                                                <img src={itm.imgUrl} alt={ itm.title } width="100%"  /> 
+                                                <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  /> 
                                         </a>
                                         </Link>
                                     </div>    
@@ -185,13 +174,13 @@ const Home = () => {
                 </div>
                 <div className="row">
                      <div className="col-md-6">
-                         <h4 className="listHeading"><u>LATEST TECH ARTICLES</u></h4>
+                         <h4 className="listHeading"><b>LATEST TECH ARTICLES</b></h4>
                         { ListInfo.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                              <a className="articleViewHome">
                                 <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy"  width="100%" height="100%"  /> 
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -204,13 +193,13 @@ const Home = () => {
                        }
                       </div>
                      <div className="col-md-6">
-                     <h4 className="listHeading"><u>LATEST TECH NEWS </u></h4>
+                     <h4 className="listHeading"><b>LATEST TECH NEWS </b></h4>
                         { ListNews.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`} >
                             <a  className="articleViewHome">
                                 <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } width="100%" height="100%"  /> 
+                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="100%"  /> 
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -223,7 +212,7 @@ const Home = () => {
                        }
                       </div>
                    </div>
-                  <h4 className="listHeading"><u>TECH COLLECTIONS</u></h4>
+                  <h4 className="listHeading"><b>TECH COLLECTIONS</b></h4>
                   <div className="row">
                               { Listdata.map((itm,k) => {
                             if(k === 0 || k === 1 || k === 5 || k === 6 ){
@@ -235,7 +224,7 @@ const Home = () => {
                                             </div>
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                                            <a>
-                                            <img src={itm.imgUrl} alt={ itm.title } width="100%" height="300px" /> 
+                                            <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="300px" /> 
                                             <div className="byAuth">
                                                 - by {itm.auther} 
                                                 <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -256,7 +245,7 @@ const Home = () => {
                                                 <div className="category">
                                                     { itm.category }
                                                 </div>
-                                                <img src={itm.imgUrl} alt={ itm.title } width="100%" height="250px" /> 
+                                                <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="250px" /> 
                                                 <div className="byAuth">
                                                 - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>

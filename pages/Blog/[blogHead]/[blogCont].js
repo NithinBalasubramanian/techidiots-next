@@ -44,9 +44,11 @@ const BlogHead = () => {
 
     useEffect(()=>{
         setFetchStatus(true);
-        Fetchdata();
-        FetchdataNot();
         window.scrollTo(0, 0);
+        Fetchdata();
+        const timer = setTimeout(() => {
+            FetchdataNot();
+          }, 2000);
     }, [blogCont]) 
 
     return(
@@ -64,45 +66,46 @@ const BlogHead = () => {
                   { datas.map((itm,k) => { 
                       return(
                           <>
-                          
-                        <Head>
-                            <title>{itm.title}</title>
-                            <link rel="icon" href="/favicon.ico"/>
-                            
-                            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-                            <meta charset="utf-8" />
-                            <meta name="description" content={itm.preheading} />
-                            <link rel="canonical" href={ 'https://techidiots.in/'+blogHead+'/'+blogCont } />
+                            <Head>
+                                <title>{itm.title}</title>
+                                <link rel="icon" href="/favicon.ico"/>
 
-                            <meta property="og:image" content="/techidiots.png"/>
-                            <meta property="og:url" content={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
-                            <meta property="og:site_name" content="www.techidiots.in"/>
-                            <meta property="og:type" content="website" />
-                            <meta property="og:title" content={itm.title} />
-                            <meta property="og:description" content={itm.preheading}/>
+                                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                                <meta charset="utf-8" />
+                                <meta name="description" content={itm.preheading} />
+                                <link rel="canonical" href={ 'https://techidiots.in/'+blogHead+'/'+blogCont } />
 
-                            <meta property="twitter:url" content="https://techidiots.in/" />
-                            <meta property="twitter:card" content="summary_large_image" />
-                            <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
-                            <meta property="twitter:title" content={itm.title} />
-                            <meta property="twitter:description" content={itm.preheading} />
+                                <meta property="og:image" content="/techidiots.png"/>
+                                <meta property="og:url" content={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
+                                <meta property="og:site_name" content="www.techidiots.in"/>
+                                <meta property="og:type" content="website" />
+                                <meta property="og:title" content={itm.title} />
+                                <meta property="og:description" content={itm.preheading}/>
 
-                            <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-                            <meta name="theme-color" content="#000000"/>
-                            <meta name="robots" content="index,follow"/>
-                            <meta name="author" content="Techidiots - Pingifinit"/>
-                            <meta name="publisher" content="Techidiots - Pingifinit"/>
-                            <meta name="owner" content="Techidiots - Pingifinit"/>
-                            <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
-                            
-                            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
-                            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-                            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-                            <link rel="manifest" href="/site.webmanifest" />
-                            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-                            <meta name="msapplication-TileColor" content="#da532c" />
-    
-                          </Head>
+                                <meta property="twitter:url" content={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
+                                <meta property="twitter:card" content="summary_large_image" />
+                                <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+                                <meta property="twitter:title" content={itm.title} />
+                                <meta property="twitter:description" content={itm.preheading} />
+
+                                <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+                                <meta name="theme-color" content="#000000"/>
+                                <meta name="robots" content="index,follow"/>
+                                <meta name="author" content="Techidiots - Pingifinit"/>
+                                <meta name="publisher" content="Techidiots - Pingifinit"/>
+                                <meta name="owner" content="Techidiots - Pingifinit"/>
+                                <meta name="keywords" content={ (itm.key) ? itm.key : "Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech" } />
+
+                                <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+                                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                                <link rel="manifest" href="/site.webmanifest" />
+                                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+                                <meta name="msapplication-TileColor" content="#da532c" />
+                              </Head>
+                           <div className="share">
+                               
+                           </div>
                           <div className="col-md-6">
                               <div className="category">
                                   { itm.category }
@@ -120,7 +123,7 @@ const BlogHead = () => {
                               <small>{ moment(itm.createdOn).fromNow() }</small>
                               </div>
                               {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
-                              <img src={itm.imgUrl} alt={ itm.title } width="100%" height="auto" /> 
+                              <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%" height="auto" /> 
                               
                                <div className="contentDisp">
                                   <p className="paraMainCont">{itm.blog}</p>
@@ -136,7 +139,7 @@ const BlogHead = () => {
                                               ) 
                                           }else if(sub_itm.SubHeading === 'sub_img'){
                                               return (
-                                                  <img src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
+                                                  <img loading="lazy" src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
                                               ) 
                                           }else if(sub_itm.SubHeading === 'tweet'){
                                               return (
@@ -206,7 +209,7 @@ const BlogHead = () => {
                                   <div className="card_recent ">
                                       <Link href={ `/Blog/${itm.category}/${itm.url}` }  >
                                         <a>
-                                          <img src={itm.imgUrl} width="100%" height="150px" alt=""></img>
+                                          <img loading="lazy" src={itm.imgUrl} width="100%" height="150px" alt=""></img>
                                           <h5>{itm.title}</h5>
                                         </a>
                                       </Link>

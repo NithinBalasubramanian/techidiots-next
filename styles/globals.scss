@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
 $primaryColor : #40e693;
 $HeadingColor : #100C2E;
 $logoColor : #fff;
@@ -16,6 +18,9 @@ $height: 15px;
 
 $bounce_height: 30px;
 
+body{
+ font-family: 'Old Standard TT', serif;
+}
 
 .preLoader{
   width:100%;
@@ -284,6 +289,13 @@ footer{
     width:90%;
     margin:0px auto;
     padding:80px 0px 20px 0px;
+	  
+     .topSideList{
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 100px;
+	align-self:flex-start;  
+     }
 
     .listHeading{
       padding:20px 0px;
@@ -326,7 +338,12 @@ footer{
 
       p{
         color:$secondaryFont;
-        padding:15px 10px;
+        padding:20px 10px;
+	background-color:#fff;
+	width:90%;
+	position:relative;
+	border-radius:2px;
+	margin-top:-80px;
       }
 
       .byAuth{
@@ -340,7 +357,7 @@ footer{
       }
      
      img{
-      height:350px;
+      height:410px;
      }
     }
     
@@ -509,10 +526,11 @@ footer{
     color:$logoColor;
     padding:50px 50px 0px 50px;
     margin:0px;
+    letter-spacing:1px;
   }
 
   h1{
-    padding:50px 50px 20px 50px;
+    padding:50px 50px;
     font-size:35px;
     font-weight:700;
     letter-spacing:2px;
@@ -537,6 +555,15 @@ footer{
   padding:0px 0px;    
   display: flex;
   flex-wrap: wrap;
+
+   .share{
+	position:fixed;
+	width:80px;
+	top:120px;
+	left:0;
+	background-color:lightblue;
+	height:300px;
+   }
   
   .category{
     padding:6px 10px;
@@ -556,6 +583,11 @@ h1{
   font-family: 'Playfair Display', serif;
   color:#151F2D;
   font-weight:800;
+}
+
+ h2,h4{
+   color :#40e693 ;
+   margin : 15px 0px;
 }
   
   .preheading p{
@@ -592,7 +624,7 @@ p{
   }
 
   .sub_img{
-    margin:10px 0px;
+    margin:15px 0px;
   }
 
   .tweet{
@@ -608,11 +640,15 @@ p{
       font-weight: 400;
       color:#afa7b5;
     }
+	  
+     a{
+     	color : #40e693;
+     }
   }
  
  .otro-blockquote{
   font-size: 16px;
-  width:80%;
+  width:100%;
   margin:30px 0px;
   font-style:italic;
   color: #555555;
@@ -670,6 +706,11 @@ p{
     float:right;
     margin-right:0px;
     margin-left:auto;
+    margin-top:60px;
+    position: -webkit-sticky; /* Safari */
+	   position: sticky;
+	   top: 100px;
+	   align-self:flex-start;
     
     h4{
       font-size:14px;
