@@ -5,6 +5,7 @@ import axios from '../../../component/apiInstance/Instance_API';
 import moment from 'moment';
 import ReactPlayer from 'react-player';
 import TweetEmbed from 'react-tweet-embed';
+import Gist from "react-gist";
 
 import { useRouter } from 'next/router'
 
@@ -94,12 +95,12 @@ const BlogHead = () => {
                             <meta name="owner" content="Techidiots - Pingifinit"/>
                             <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
                             
-                            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
-                            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-                            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-                            <link rel="manifest" href="/site.webmanifest">
-                            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-                            <meta name="msapplication-TileColor" content="#da532c">
+                            <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+                            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                            <link rel="manifest" href="/site.webmanifest" />
+                            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+                            <meta name="msapplication-TileColor" content="#da532c" />
     
                           </Head>
                           <div className="col-md-6">
@@ -142,6 +143,12 @@ const BlogHead = () => {
                                                   <div className="tweet">
                                                    <TweetEmbed  id={ sub_itm.Content } />
                                                   </div>
+                                              ) 
+                                          }else if(sub_itm.SubHeading === 'gist'){
+                                              return (
+                                                <div>
+                                                    <Gist id={ sub_itm.Content } />
+                                                </div>
                                               ) 
                                           }else if(sub_itm.SubHeading === 'bold'){
                                               return (
