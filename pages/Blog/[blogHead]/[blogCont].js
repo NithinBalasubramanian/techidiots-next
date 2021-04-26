@@ -6,7 +6,7 @@ import moment from 'moment';
 import ReactPlayer from 'react-player';
 import TweetEmbed from 'react-tweet-embed';
 import Gist from "react-gist";
-import { FacebookShareButton  } from "react-share";
+import { FacebookShareButton , LinkedinShareButton } from "react-share";
 
 
 import { useRouter } from 'next/router'
@@ -106,7 +106,8 @@ const BlogHead = () => {
                                 <meta name="msapplication-TileColor" content="#da532c" />
                               </Head>
                            <div className="share">
-                               <FacebookShareButton logoFIll="red" url={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } />
+                               <FacebookShareButton logoFIll="red" url={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont }  quote={itm.title} hashtag="Techidiots" />
+                                <LinkedinShareButton source={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } title={ itm.title } source={ itm.description } />
                            </div>
                           <div className="col-md-6">
                               <div className="category">
