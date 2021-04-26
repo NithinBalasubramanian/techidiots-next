@@ -339,10 +339,11 @@ footer{
       p{
         color:$secondaryFont;
         padding:20px 10px;
-	background-color:#fff;
+	background-color:$hoverColor;
 	width:90%;
 	position:relative;
 	border-radius:2px;
+	margin:0px auto;
 	margin-top:-80px;
       }
 
@@ -561,7 +562,6 @@ footer{
 	width:80px;
 	top:120px;
 	left:0;
-	background-color:lightblue;
 	height:300px;
    }
   
