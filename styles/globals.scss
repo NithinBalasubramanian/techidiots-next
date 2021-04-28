@@ -624,7 +624,10 @@ p{
   }
 
   .sub_img{
-    margin:15px 0px;
+    width : 95%;
+    margin:20px auto;
+    border-radius : 10px;
+    box-shadow: 0 5px 10px rgb(154 160 185 / 5%), 0 15px 40px rgb(166 173 201 / 20%); 
   }
 
   .tweet{
