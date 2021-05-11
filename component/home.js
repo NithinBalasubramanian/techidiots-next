@@ -24,6 +24,7 @@ const Home = () => {
           fetchAbove();
         
         const timer = setTimeout(() => {
+            setFetchStatus(false);
            fetchMid();
           }, 3000);
         const timer1 = setTimeout(() => {
