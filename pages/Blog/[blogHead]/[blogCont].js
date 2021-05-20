@@ -223,6 +223,26 @@ const BlogHead = () => {
                       </div>
                   </div>
               </div>
+
+              <div className="listBlogViewPage">
+                {recent.map((itm,k) => {
+                        return (
+                            <div className="listBelowCard">
+                                <Link href={ `/Blog/${itm.category}/${itm.url}` }  >
+                                <a className="listBelowFlex">
+                                    <div class="blogListImage">
+                                      <img loading="lazy" src={itm.imgUrl} width="100%" height="100%" alt=""></img>
+                                    </div>
+                                    <div class="blogListPreCont">
+                                      <h5>{itm.title}</h5>
+                                    </div>
+                                </a>
+                                </Link>
+                            </div>
+                            )
+                        })
+                    }
+              </div>
           </div>
       </>
     )
