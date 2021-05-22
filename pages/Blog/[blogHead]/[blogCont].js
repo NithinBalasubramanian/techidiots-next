@@ -109,15 +109,14 @@ const BlogHead = () => {
                                <FacebookShareButton logoFIll="red" url={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont }  quote={itm.title} hashtag="Techidiots" />
                                 <LinkedinShareButton source={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } title={ itm.title } source={ itm.description } />
                            </div>
-                          <div className="col-md-6">
+                          <div className="col-md-12 blogOn">
+                              <div className="blogContView">
                               <div className="category">
                                   { itm.category }
                               </div>
-                          </div>
-                          <div className="col-md-12">
-                              <h1>{itm.title}</h1>
-                          </div>
-                          <div className="col-md-8">
+                               <div className="blogTitle">
+                                 <h1>{itm.title}</h1>
+                              </div>
                               <div className="preheading">
                                   <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.preheading}</p>
                               </div>
@@ -126,7 +125,7 @@ const BlogHead = () => {
                               <small>{ moment(itm.createdOn).fromNow() }</small>
                               </div>
                               {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
-                              <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%" height="auto" /> 
+                              <img src={itm.imgUrl} loading="lazy" className="blogImgMain" alt={ itm.title } width="100%" height="auto" /> 
                               
                                <div className="contentDisp">
                                   <p className="paraMainCont">{itm.blog}</p>
@@ -202,26 +201,10 @@ const BlogHead = () => {
                                     <p className="reference"> Reference : { itm.reference } </p>
                               </div>
                             </div>
+                            </div>
                          </>
                       )
                   }) }
-                  <div className="col-md-4 row recent">
-                      <div className="recent_part">
-                          {recent.map((itm,k) => {
-                              return (
-                                  <div className="card_recent ">
-                                      <Link href={ `/Blog/${itm.category}/${itm.url}` }  >
-                                        <a>
-                                          <img loading="lazy" src={itm.imgUrl} width="100%" height="150px" alt=""></img>
-                                          <h5>{itm.title}</h5>
-                                        </a>
-                                      </Link>
-                                  </div>
-                              )
-                          })
-                          }
-                      </div>
-                  </div>
               </div>
 
               <div className="listBlogViewPage">
@@ -234,7 +217,13 @@ const BlogHead = () => {
                                       <img loading="lazy" src={itm.imgUrl} width="100%" height="100%" alt=""></img>
                                     </div>
                                     <div class="blogListPreCont">
+                                      <div className="category">
+                                       { itm.category }
+                                      </div>
                                       <h5>{itm.title}</h5>
+                                      <p>{itm.preheading}</p>
+                                      <small>  - by {itm.auther} </small>
+                                      <small className="onDate">{ moment(itm.createdOn).fromNow() }</small>
                                     </div>
                                 </a>
                                 </Link>
