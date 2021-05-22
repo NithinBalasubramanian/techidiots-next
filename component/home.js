@@ -115,13 +115,49 @@ const Home = () => {
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="manifest" href="/site.webmanifest" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-            <meta name="msapplication-TileColor" content="#da532c" />
-                
-                  
-                
+            <meta name="msapplication-TileColor" content="#da532c" />    
         </Head>
         <div className="contMain">
             <div className="homeListContainer">
+                <div className="headerList">
+                { ListTopdata.map((itm,k) => {
+                            if(k === 0 ){
+                                return(
+                                    <div className="colm_1">
+                                        <img src={ itm.imgUrl } width="100%" height="100%" />
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`} >
+                                        <div className="onImage">
+                                            <h4>{ itm.title }</h4>
+                                        </div>
+                                        </Link>
+                                    </div>
+                               )
+                            }else if(k == 1){
+                                return(
+                                    <div className="colm_2">
+                                        <img src={ itm.imgUrl } width="100%" height="100%" />
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`} >
+                                        <div className="onImage">
+                                            <h4>{ itm.title }</h4>
+                                        </div>
+                                        </Link>
+                                    </div>
+                               )
+                            }else if(k == 2){
+                                return(
+                                    <div className="colm_3">
+                                      <img src={ itm.imgUrl } width="100%" height="100%" />
+                                      <Link href={`/Blog/${itm.category}/${itm.url}`} >
+                                        <div className="onImage">
+                                            <h4>{ itm.title }</h4>
+                                        </div>
+                                        </Link>
+                                    </div>
+                               )
+                            }
+                        })
+                    }
+                </div>
                 <div className="row">
                     <div className="col-md-8">
                     { ListTopdata.map((itm,k) => {
