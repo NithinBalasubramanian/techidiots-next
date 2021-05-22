@@ -184,7 +184,7 @@ const Home = () => {
                     </div>
                     <div className="col-md-4">
                     { ListTopdata.map((itm,k) => {
-                            if(k > 4 && k < 7 ){
+                            if(k > 4 && k < 9 ){
                                 return(
                                     <div className="card_top_sub_home">
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
