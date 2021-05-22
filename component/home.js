@@ -161,7 +161,7 @@ const Home = () => {
                 <div className="row">
                     <div className="col-md-8">
                     { ListTopdata.map((itm,k) => {
-                            if(k === 0 || k === 1  ){
+                            if(k === 3 || k === 4  ){
                                 return(
                                     <div className="card_top_home">
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
@@ -184,7 +184,7 @@ const Home = () => {
                     </div>
                     <div className="col-md-4">
                     { ListTopdata.map((itm,k) => {
-                            if(k > 1 && k < 5 ){
+                            if(k > 4 && k < 7 ){
                                 return(
                                     <div className="card_top_sub_home">
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
