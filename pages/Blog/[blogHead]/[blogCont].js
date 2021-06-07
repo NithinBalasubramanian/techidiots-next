@@ -104,6 +104,7 @@ const BlogHead = () => {
                                 <link rel="manifest" href="/site.webmanifest" />
                                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
                                 <meta name="msapplication-TileColor" content="#da532c" />
+                                <script data-ad-client="ca-pub-3827320441512963" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                               </Head>
                            <div className="share">
                                <FacebookShareButton logoFIll="red" url={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont }  quote={itm.title} hashtag="Techidiots" />
