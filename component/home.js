@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React , { useState , useEffect } from 'react';
+import AdSense from 'react-adsense';
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
 import moment from 'moment';
@@ -18,10 +19,13 @@ const Home = () => {
     let [ FetchStatus , setFetchStatus ] = useState(true);
 
     const { asPath } = useRouter()
+
   
       useEffect(() => {
           window.scrollTo(0, 0);
           fetchAbove();
+          
+          installGoogleAds();
         
         const timer = setTimeout(() => {
             setFetchStatus(false);
@@ -33,6 +37,16 @@ const Home = () => {
         return () => clearTimeout(timer);
         
       }, [])
+
+      const installGoogleAds = () => {
+        const elem = document.createElement("script");
+        elem.src =
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+        elem.async = true;
+        elem.defer = true;
+        document.body.insertBefore(elem, document.body.firstChild);
+      };
+  
     
       const fetchAbove = () => {
           axios.get('/homeTopFetch')
@@ -209,8 +223,18 @@ const Home = () => {
                         <p>About TechIdiots</p>
                         <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
                     </div>
+                    <div className="col-md-6">
+                    <AdSense.Google
+                        client='ca-pub-3827320441512963'
+                        slot='3005937448'
+                        style={{ display: 'block' }}
+                        format='auto'
+                        responsive='true'
+                    />
+                    </div>
+
                        
-                   
+     
                 </div>
                 <div className="row">
                      <div className="col-md-6">
