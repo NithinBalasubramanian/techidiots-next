@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="navHead col-md-4 ">
                 <div className="navHeadLogo">
 //                     <img src="/techidiots.png"  alt="Techidiots" height="100px" width="250px" className="logoImg" />
-                       <h1 style={{ font-size:'24px',letter-spacing:'1px',color:#fff,padding:'4px'}}>Tech Idiots</h1>
+                       <h1 className="logoP">Tech Idiots</h1>
                 </div>
                 <div className="navHeadMenu">
                     <BiMenuAltLeft onClick={ sidebarStatusHandler }  size="40px" color="#fff" style={{margin:"10px"}}/>
