@@ -209,19 +209,7 @@ const Home = () => {
                         <p>About TechIdiots</p>
                         <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
                     </div>
-                             <div className="col-md-6">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                          
-                            <ins class="adsbygoogle"
-                                 style={{ display:block }}
-                                 data-ad-client="ca-pub-3827320441512963"
-                                 data-ad-slot="3005937448"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                    </div>
+                       
                    
                 </div>
                 <div className="row">
