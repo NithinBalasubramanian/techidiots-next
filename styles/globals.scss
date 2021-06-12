@@ -8,8 +8,8 @@ $primaryColor : #3f424a;
 $HeadingColor : #100C2E;
 $logoColor : #fff;
 $menuColor : #fff;
-$cardColor : #bdc1c9;
-$activeColor :#1D976C ;
+$cardColor : #f2fffa;
+$activeColor :#616875 ;
 $hoverColor : #c4ffd9;
 $secondaryFont : #1D976C;
 
@@ -521,7 +521,7 @@ footer{
        
        .category{
          padding: 5px 20px;
-         background-color: #40e693;
+         background-color: $primaryColor;
          position: absolute;
          z-index: 1000;
          margin: 8px 0px;
