@@ -16,7 +16,6 @@ const Navbar = () => {
         <div className="NavContainer row">
             <div className="navHead col-md-4 ">
                 <div className="navHeadLogo">
-//                     <img src="/techidiots.png"  alt="Techidiots" height="100px" width="250px" className="logoImg" />
                        <h1 className="logoP">Tech Idiots</h1>
                 </div>
                 <div className="navHeadMenu">
