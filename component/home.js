@@ -211,7 +211,7 @@ const Home = () => {
                     </div>
                              <div className="col-md-6">
                         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- ad - home - cont -->
+                          
                             <ins class="adsbygoogle"
                                  style={{ display:block }}
                                  data-ad-client="ca-pub-3827320441512963"
@@ -222,19 +222,7 @@ const Home = () => {
                                  (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
                     </div>
-                    <div className="col-md-6">
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- ad - home - cont -->
-                            <ins class="adsbygoogle"
-                                 style={{display:block}}
-                                 data-ad-client="ca-pub-3827320441512963"
-                                 data-ad-slot="3005937448"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                    </div>
+                   
                 </div>
                 <div className="row">
                      <div className="col-md-6">
