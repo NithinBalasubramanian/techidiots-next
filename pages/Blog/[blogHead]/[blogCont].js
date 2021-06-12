@@ -106,10 +106,7 @@ const BlogHead = () => {
                                 <meta name="msapplication-TileColor" content="#da532c" />
                                 
                               </Head>
-                           <div className="share">
-                               <FacebookShareButton logoFIll="red" url={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont }  quote={itm.title} hashtag="Techidiots" />
-                                <LinkedinShareButton source={ 'https://techidiots.in/Blog/'+blogHead+'/'+blogCont } title={ itm.title } source={ itm.description } />
-                           </div>
+                       
                           <div className="col-md-12 blogOn">
                               <div className="blogContView">
                               <div className="category">
