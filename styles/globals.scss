@@ -4,7 +4,7 @@
 //@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
 
-$primaryColor : #40e693;
+$primaryColor : #40e6a1;
 $HeadingColor : #100C2E;
 $logoColor : #fff;
 $menuColor : #fff;
@@ -852,7 +852,9 @@ footer{
   width:100%;
 
   .blogContView{
-    width:70%;
+    width:75%;
+    background : #fff;
+    padding:20px 30px;
     margin:10px auto;
   }
 
