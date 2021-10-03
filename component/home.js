@@ -48,8 +48,8 @@ const Home = () => {
     //   };
   
     
-      const fetchAbove = () => {
-          axios.get('/homeTopFetch')
+      const fetchAbove = async () => {
+         await axios.get('/homeTopFetch')
         .then((res) => {
               setListTopdata(res.data);
               setFetchStatus(false);
@@ -59,8 +59,8 @@ const Home = () => {
           })
       }
       
-      const fetchMid = () => {
-         axios.get('/blogFetchHome/techInfo')
+      const fetchMid = async () => {
+        await axios.get('/blogFetchHome/techInfo')
         .then((res) => {
               setListInfo(res.data);
           })
