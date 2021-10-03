@@ -25,7 +25,7 @@ const Home = () => {
           window.scrollTo(0, 0);
           fetchAbove();
           
-          installGoogleAds();
+        //   installGoogleAds();
         
         const timer = setTimeout(() => {
             setFetchStatus(false);
@@ -38,14 +38,14 @@ const Home = () => {
         
       }, [])
 
-      const installGoogleAds = () => {
-        const elem = document.createElement("script");
-        elem.src =
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-        elem.async = true;
-        elem.defer = true;
-        document.body.insertBefore(elem, document.body.firstChild);
-      };
+    //   const installGoogleAds = () => {
+    //     const elem = document.createElement("script");
+    //     elem.src =
+    //       "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    //     elem.async = true;
+    //     elem.defer = true;
+    //     document.body.insertBefore(elem, document.body.firstChild);
+    //   };
   
     
       const fetchAbove = () => {
