@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="manifest" href="/manifest.json" />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
