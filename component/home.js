@@ -30,10 +30,10 @@ const Home = () => {
         const timer = setTimeout(() => {
             setFetchStatus(false);
            fetchMid();
-          }, 3000);
+          }, 6000);
         const timer1 = setTimeout(() => {
            fetchAll();
-          }, 5000);
+          }, 10000);
         return () => clearTimeout(timer);
         
       }, [])
@@ -139,10 +139,10 @@ const Home = () => {
                             if(k === 0 ){
                                 return(
                                     <div className="colm_1">
-                                        <img src={ itm.imgUrl } width="100%" height="100%" />
+                                        <img src={ itm.imgUrl } width="100%" height="100%" alt={ itm.title } />
                                         <Link href={`/Blog/${itm.category}/${itm.url}`} >
                                         <div className="onImage">
-                                            <h4>{ itm.title }</h4>
+                                            <h2>{ itm.title }</h2>
                                         </div>
                                         </Link>
                                     </div>
@@ -150,10 +150,10 @@ const Home = () => {
                             }else if(k == 1){
                                 return(
                                     <div className="colm_2">
-                                        <img src={ itm.imgUrl } width="100%" height="100%" />
+                                        <img src={ itm.imgUrl } width="100%" height="100%" alt={ itm.title } />
                                         <Link href={`/Blog/${itm.category}/${itm.url}`} >
                                         <div className="onImage">
-                                            <h4>{ itm.title }</h4>
+                                            <h2>{ itm.title }</h2>
                                         </div>
                                         </Link>
                                     </div>
@@ -161,10 +161,10 @@ const Home = () => {
                             }else if(k == 2){
                                 return(
                                     <div className="colm_3">
-                                      <img src={ itm.imgUrl } width="100%" height="100%" />
+                                      <img src={ itm.imgUrl } width="100%" height="100%" alt={ itm.title }  />
                                       <Link href={`/Blog/${itm.category}/${itm.url}`} >
                                         <div className="onImage">
-                                            <h4>{ itm.title }</h4>
+                                            <h2>{ itm.title }</h2>
                                         </div>
                                         </Link>
                                     </div>
@@ -182,7 +182,7 @@ const Home = () => {
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                                         <a>
                                             <div className="category">{ itm.category }</div>
-                                            <h4>{ itm.title }</h4>
+                                            <h2>{ itm.title }</h2>
                                             <div className="byAuth">
                                                 - by {itm.auther}
                                                 <small>{moment(itm.createdOn).fromNow()}</small>
@@ -205,7 +205,7 @@ const Home = () => {
                                         <Link href={`/Blog/${itm.category}/${itm.url}`}  >
                                         <a>
                                                 <p className="category">{ itm.category }</p>
-                                                <h4>{ itm.title }</h4>
+                                                <h2>{ itm.title }</h2>
                                                 <div className="byAuth">
                                                     - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
@@ -224,13 +224,13 @@ const Home = () => {
                         <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
                     </div>
                     <div className="col-md-6">
-                    <AdSense.Google
+                    {/* <AdSense.Google
                         client='ca-pub-3827320441512963'
                         slot='3005937448'
                         style={{ display: 'block' }}
                         format='auto'
                         responsive='true'
-                    />
+                    /> */}
                     </div>
 
                        
@@ -238,7 +238,7 @@ const Home = () => {
                 </div>
                 <div className="row">
                      <div className="col-md-6">
-                         <h4 className="listHeading"><b>LATEST TECH ARTICLES</b></h4>
+                         <h2 className="listHeading"><b>LATEST TECH ARTICLES</b></h2>
                         { ListInfo.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`}  >
@@ -248,7 +248,7 @@ const Home = () => {
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
-                                  <h4>{ itm.title }</h4>
+                                  <h2>{ itm.title }</h2>
                                 </div>
                               </a>
                          </Link>
@@ -257,7 +257,7 @@ const Home = () => {
                        }
                       </div>
                      <div className="col-md-6">
-                     <h4 className="listHeading"><b>LATEST TECH NEWS </b></h4>
+                     <h2 className="listHeading"><b>LATEST TECH NEWS </b></h2>
                         { ListNews.map((itm,k) => {
                          return(
                            <Link href={`/Blog/${itm.category}/${itm.url}`} >
@@ -267,7 +267,7 @@ const Home = () => {
                                 </div>
                                 <div className="articleCont">
                                   <small>{ moment(itm.createdOn).fromNow() }</small>
-                                  <h4>{ itm.title }</h4>
+                                  <h2>{ itm.title }</h2>
                                 </div>
                             </a>
                          </Link>
@@ -276,7 +276,7 @@ const Home = () => {
                        }
                       </div>
                    </div>
-                  <h4 className="listHeading"><b>TECH COLLECTIONS</b></h4>
+                  <h2 className="listHeading"><b>TECH COLLECTIONS</b></h2>
                   <div className="row">
                               { Listdata.map((itm,k) => {
                             if(k === 0 || k === 1 || k === 5 || k === 6 ){
@@ -293,8 +293,8 @@ const Home = () => {
                                                 - by {itm.auther} 
                                                 <small>{ moment(itm.createdOn).fromNow() }</small>
                                             </div>
-                                            <h4>{ itm.title }</h4>
-                                            <p>{ itm.preheading } </p>
+                                            <h2>{ itm.title }</h2>
+                                            {/* <p>{ itm.preheading } </p> */}
                                           </a>
                                         </Link>
                                     </div>                        
@@ -314,8 +314,8 @@ const Home = () => {
                                                 - by {itm.auther} 
                                                     <small>{ moment(itm.createdOn).fromNow() }</small>
                                                 </div>
-                                                <h4>{ itm.title }</h4>
-                                                <p>{ itm.preheading } </p>
+                                                <h2>{ itm.title }</h2>
+                                                {/* <p>{ itm.preheading } </p> */}
                                              </a>
                                         </Link>
                                     </div>

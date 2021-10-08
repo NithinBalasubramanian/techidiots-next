@@ -130,11 +130,11 @@ const BlogHead = () => {
                                               ) 
                                           }else if(sub_itm.SubHeading === 'sub_head'){
                                               return (
-                                                  <h4  key={s_k} >{sub_itm.Content}</h4>
+                                                  <h2  key={s_k} >{sub_itm.Content}</h2>
                                               ) 
                                           }else if(sub_itm.SubHeading === 'sub_img'){
                                               return (
-                                                  <img loading="lazy" src={sub_itm.Content} alt="techidiots" width="100%" height="auto" className="sub_img" />
+                                                  <img loading="lazy" src={sub_itm.Content} alt={itm.title} width="100%" height="auto" className="sub_img" />
                                               ) 
                                           }else if(sub_itm.SubHeading === 'tweet'){
                                               return (
@@ -208,16 +208,16 @@ const BlogHead = () => {
                                 <Link href={ `/Blog/${itm.category}/${itm.url}` }  >
                                 <a className="listBelowFlex">
                                     <div class="blogListImage">
-                                      <img loading="lazy" src={itm.imgUrl} width="100%" height="100%" alt=""></img>
+                                      <img loading="lazy" src={itm.imgUrl} width="100%" height="100%" alt={itm.title}></img>
                                     </div>
                                     <div class="blogListPreCont">
                                       <div className="category">
                                        { itm.category }
                                       </div>
-                                      <h5>{itm.title}</h5>
+                                      <h3>{itm.title}</h3>
                                       <p>{itm.preheading}</p>
-                                      <small>  - by {itm.auther} </small>
-                                      <small className="onDate">{ moment(itm.createdOn).fromNow() }</small>
+                                      {/* <small>  - by {itm.auther} </small>
+                                      <small className="onDate">{ moment(itm.createdOn).fromNow() }</small> */}
                                     </div>
                                 </a>
                                 </Link>
