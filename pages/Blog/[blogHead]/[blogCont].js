@@ -112,7 +112,7 @@ const BlogHead = () => {
 
                                 <div className="share">
                                     <a href={ `https://api.whatsapp.com/send?text=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Whatsapp">
-                                        <FaWhatsapp style={{ fontSize : '25px', margin : '20px 25px' , color : '#25D366'}} />
+                                        <FaWhatsapp style={{ fontSize : '25px', margin : '15px 25px' , color : '#25D366'}} />
                                     </a>
                                     <a href={ `https://www.facebook.com/sharer/sharer.php?u=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Facebook">
                                         <FaFacebook style={{ fontSize : '25px', margin : '15px 25px' , color : '#4267B2'}} />
