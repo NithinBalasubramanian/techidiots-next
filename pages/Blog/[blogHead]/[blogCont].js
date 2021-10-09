@@ -7,6 +7,9 @@ import ReactPlayer from 'react-player';
 import TweetEmbed from 'react-tweet-embed';
 import Gist from "react-gist";
 
+import { FaWhatsapp , FaInstagram , FaTwitter , FaFacebook } from 'react-icons/fa'
+import { AiOutlineMail  } from 'react-icons/ai'
+
 
 import { useRouter } from 'next/router'
 
@@ -52,6 +55,8 @@ const BlogHead = () => {
         //     FetchdataNot();
         //   }, 2000);
     }, [blogCont]) 
+
+    let url = "https://techidiots.in";
 
     return(
         <>
@@ -104,12 +109,32 @@ const BlogHead = () => {
                               </Head>
 
                           <div className="col-md-12 blogOn">
+
+                                <div className="share">
+                                    <a href={ `https://api.whatsapp.com/send?text=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Whatsapp">
+                                        <FaWhatsapp style={{ fontSize : '25px', margin : '20px 25px' , color : '#25D366'}} />
+                                    </a>
+                                    <a href={ `https://www.facebook.com/sharer/sharer.php?u=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Facebook">
+                                        <FaFacebook style={{ fontSize : '25px', margin : '15px 25px' , color : '#4267B2'}} />
+                                    </a>
+                                    {/* <a href={ `https://www.instagram.com/sharer/sharer.php?u=${url}/${itm.category}/${itm.url} `}  target="_blank" aria-label="Instagram">
+                                        <FaInstagram style={{ fontSize : '25px', margin : '15px 25px' , color : '#E1306C'}} />
+                                    </a> */}
+                                    <a href={ `https://twitter.com/share?text=${itm.title}&url=${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Twitter">
+                                        <FaTwitter style={{ fontSize : '25px', margin : '15px 25px' , color : '#1DA1F2'}} />
+                                    </a>
+                                    <a href={ `mailto:?subject=Checkout this blog at Techidiots&body=${itm.title}  ${url}/${itm.category}/${itm.url} `} target="_blank" aria-label="Mail">
+                                        <AiOutlineMail style={{ fontSize : '25px', margin : '15px 25px' , color : '#FF5A5F'}} />
+                                    </a>
+                                </div>
+
                               <div className="blogContView">
                               <div className="category">
                                   { itm.category }
                               </div>
                                <div className="blogTitle">
                                  <h1>{itm.title}</h1>
+                            
                               </div>
                               <div className="preheading">
                                   <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.preheading}</p>
@@ -192,8 +217,9 @@ const BlogHead = () => {
                                       ) 
                                     : null
                                     }
-                                    <p className="reference"> Reference : { itm.reference } </p>
-
+                                    { itm.reference &&
+                                        <p className="reference"> Reference : { itm.reference } </p>
+                                    }
                               </div>
                             </div>
                             </div>

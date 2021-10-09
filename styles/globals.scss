@@ -927,6 +927,7 @@ footer{
     background : #fff;
     padding:20px 30px;
     margin:10px auto;
+
   }
 
   .blogImgMain{
@@ -1010,11 +1011,14 @@ footer{
   flex-wrap: wrap;
 
    .share{
-    position:fixed;
-    width:80px;
-    top:120px;
-    left:0;
-    height:300px;
+      position:fixed;
+      width:80px;
+      top:120px;
+      left:0;
+      height:auto;
+      background-color: #fff;
+      color:#fff;
+      padding : 15px 0px;
     }
   
   .category{
