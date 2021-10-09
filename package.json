@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -24,5 +25,9 @@
     "react-share": "^4.4.0",
     "react-tweet-embed": "^1.2.2",
     "sass": "^1.32.8"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.27",
+    "typescript": "^4.4.3"
   }
 }
