@@ -13,10 +13,16 @@ const Home = () => {
     let [ ListInfo , setListInfo ] = useState([]);
   
     let [ ListNews , setListNews ] = useState([]);
+
+    let [ ListdataStatus , setListdataStatus ] = useState(false);
+  
+    let [ ListInfoStatus , setListInfoStatus ] = useState(false);
+  
+    let [ ListNewsStatus , setListNewsStatus ] = useState(false);
     
     let [ ListTopdata , setListTopdata ] = useState([]);
   
-    let [ FetchStatus , setFetchStatus ] = useState(true);
+    let [ FetchStatus , setFetchStatus ] = useState(false);
 
     const { asPath } = useRouter()
 
@@ -27,14 +33,14 @@ const Home = () => {
           
         //   installGoogleAds();
         
-        const timer = setTimeout(() => {
-            setFetchStatus(false);
-           fetchMid();
-          }, 6000);
-        const timer1 = setTimeout(() => {
-           fetchAll();
-          }, 10000);
-        return () => clearTimeout(timer);
+        // const timer = setTimeout(() => {
+        //     setFetchStatus(false);
+        //    fetchMid();
+        //   }, 6000);
+        // const timer1 = setTimeout(() => {
+        //    fetchAll();
+        //   }, 10000);
+        // return () => clearTimeout(timer);
         
       }, [])
 
@@ -53,6 +59,7 @@ const Home = () => {
         .then((res) => {
               setListTopdata(res.data);
               setFetchStatus(false);
+              fetchMid();
           })
           .catch((error) => {
               console.log(error);
@@ -63,6 +70,8 @@ const Home = () => {
         await axios.get('/blogFetchHome/techInfo')
         .then((res) => {
               setListInfo(res.data);
+              setListInfoStatus(true);
+              fetchAll();
           })
           .catch((error) => {
               console.log(error);
@@ -70,6 +79,7 @@ const Home = () => {
           axios.get('/blogFetchHome/techNews')
         .then((res) => {
               setListNews(res.data);
+              setListNewsStatus(true);
           })
           .catch((error) => {
               console.log(error);
@@ -80,6 +90,7 @@ const Home = () => {
           axios.get('/homeFetch')
           .then((res) => {
               setListdata(res.data);
+              setListdataStatus(true);
           })
           .catch((error) => {
               console.log(error);
@@ -130,7 +141,7 @@ const Home = () => {
             <link rel="manifest" href="/site.webmanifest" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
             <meta name="msapplication-TileColor" content="#da532c" />   
-            <script data-ad-client="ca-pub-3827320441512963" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            {/* <script data-ad-client="ca-pub-3827320441512963" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
         </Head>
         <div className="contMain">
             <div className="homeListContainer">
@@ -238,44 +249,55 @@ const Home = () => {
                 </div>
                 <div className="row">
                      <div className="col-md-6">
-                         <h2 className="listHeading"><b>LATEST TECH ARTICLES</b></h2>
-                        { ListInfo.map((itm,k) => {
-                         return(
-                           <Link href={`/Blog/${itm.category}/${itm.url}`}  >
-                             <a className="articleViewHome">
-                                <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy"  width="100%" height="100%"  /> 
-                                </div>
-                                <div className="articleCont">
-                                  <small>{ moment(itm.createdOn).fromNow() }</small>
-                                  <h2>{ itm.title }</h2>
-                                </div>
-                              </a>
-                         </Link>
-                         )
-                        })
-                       }
+                         { ListInfoStatus ?
+                            <>
+                                <h2 className="listHeading"><b>LATEST TECH ARTICLES</b></h2>
+                                { ListInfo.map((itm,k) => {
+                                    return(
+                                        <Link href={`/Blog/${itm.category}/${itm.url}`}  >
+                                            <a className="articleViewHome">
+                                                <div className="articleImage">
+                                                <img src={itm.imgUrl} alt={ itm.title } loading="lazy"  width="100%" height="100%"  /> 
+                                                </div>
+                                                <div className="articleCont">
+                                                <small>{ moment(itm.createdOn).fromNow() }</small>
+                                                <h2>{ itm.title }</h2>
+                                                </div>
+                                            </a>
+                                        </Link>
+                                    )
+                                })
+                            }
+                            </>
+                        : null }
                       </div>
                      <div className="col-md-6">
-                     <h2 className="listHeading"><b>LATEST TECH NEWS </b></h2>
-                        { ListNews.map((itm,k) => {
-                         return(
-                           <Link href={`/Blog/${itm.category}/${itm.url}`} >
-                            <a  className="articleViewHome">
-                                <div className="articleImage">
-                                  <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="100%"  /> 
-                                </div>
-                                <div className="articleCont">
-                                  <small>{ moment(itm.createdOn).fromNow() }</small>
-                                  <h2>{ itm.title }</h2>
-                                </div>
-                            </a>
-                         </Link>
-                         )
-                        })
-                       }
-                      </div>
-                   </div>
+                    { ListNewsStatus ?
+                        <>
+                            <h2 className="listHeading"><b>LATEST TECH NEWS </b></h2>
+                                { ListNews.map((itm,k) => {
+                                return(
+                                <Link href={`/Blog/${itm.category}/${itm.url}`} >
+                                    <a  className="articleViewHome">
+                                        <div className="articleImage">
+                                        <img src={itm.imgUrl} alt={ itm.title } loading="lazy" width="100%" height="100%"  /> 
+                                        </div>
+                                        <div className="articleCont">
+                                        <small>{ moment(itm.createdOn).fromNow() }</small>
+                                        <h2>{ itm.title }</h2>
+                                        </div>
+                                    </a>
+                                </Link>
+                                )
+                                })
+                            }
+                        </>
+                    : null } 
+                    </div>
+                </div>
+
+                { ListdataStatus ?
+                <>
                   <h2 className="listHeading"><b>TECH COLLECTIONS</b></h2>
                   <div className="row">
                               { Listdata.map((itm,k) => {
@@ -324,6 +346,8 @@ const Home = () => {
                             })
                         }
                    </div>
+                </>
+                : null }
             </div>
         </div>
      </>

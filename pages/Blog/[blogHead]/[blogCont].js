@@ -27,6 +27,7 @@ const BlogHead = () => {
         .then( res => {
             setDatas(res.data);
             setFetchStatus(false);
+            FetchdataNot();
         })
         .catch( err => {
             console.log(err);
@@ -47,9 +48,9 @@ const BlogHead = () => {
         setFetchStatus(true);
         window.scrollTo(0, 0);
         Fetchdata();
-        const timer = setTimeout(() => {
-            FetchdataNot();
-          }, 2000);
+        // const timer = setTimeout(() => {
+        //     FetchdataNot();
+        //   }, 2000);
     }, [blogCont]) 
 
     return(
