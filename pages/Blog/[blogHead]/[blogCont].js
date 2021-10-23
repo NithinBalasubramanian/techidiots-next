@@ -61,6 +61,16 @@ const BlogHead = () => {
 
     return(
         <>
+
+        <Head>
+            <meta property="twitter:url" content="https://techidiots.in/" />
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+            <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
+            <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
+        </Head>
+
+
         <div className={(FetchStatus) ? "preLoader" : "preNone" } >
             <div className="wrap">
                 <div className="loading">
@@ -118,14 +128,14 @@ const BlogHead = () => {
                                     description: itm.preheading,
                                     images: [
                                     {
-                                        url: itm.imgUrl,
+                                        url: 'https://techidiots.in/techidiots.png',
                                         width: 800,
                                         height: 600,
                                         alt: itm.title,
                                         type: 'image/png',
                                     },
                                     {
-                                        url: itm.imgUrl,
+                                        url: 'https://techidiots.in/techidiots.png',
                                         width: 900,
                                         height: 800,
                                         alt: itm.title ,
