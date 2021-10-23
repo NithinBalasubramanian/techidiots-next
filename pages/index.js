@@ -1,10 +1,10 @@
 import Head from 'next/head'
-import HomeBlog from '../component/home'
+import HomeMain from '../component/HomeMain'
 
 export default function Home() {
   return (
     <div>
-      <HomeBlog />
+      <HomeMain />
     </div>
   )
 }

@@ -30,6 +30,12 @@ $bounce_height: 30px;
  background-color:#f0f5f4;
 }
 
+.slick-prev:before,
+.slick-next:before {
+    font-family:initial!important;
+    color:yellow !important; 
+}
+
 .preLoader{
   width:100%;
   height:100vh;
@@ -496,6 +502,20 @@ footer{
      img{
       height:410px;
      }
+    }
+
+    .slide_Cart{
+      // background-color: $cardColor;
+      height : 550px;
+
+      h2{
+        height : 120px !important;
+      }
+
+      img{
+        height : 250px !important;
+      }
+
     }
     
     .card_top_sub_home{
