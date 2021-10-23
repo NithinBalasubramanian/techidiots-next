@@ -105,8 +105,7 @@ const BlogHead = () => {
                                 <link rel="manifest" href="/site.webmanifest" />
                                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
                                 <meta name="msapplication-TileColor" content="#da532c" />
-                                
-                              </Head>
+                            </Head>
 
                           <div className="col-md-12 blogOn">
 

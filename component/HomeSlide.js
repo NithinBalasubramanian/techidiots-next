@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "react-slick";
 import Link from 'next/link'
 import moment from 'moment'
+import Image from 'next/image'
 
 // slick StyleSheet
 
@@ -35,6 +36,10 @@ const HomeSlide = ({ data }) => {
         }]
     }
 
+    const myLoader = ({ src, width, quality }) => {
+        return `${src}?w=${width}&q=${quality || 75}`
+    }
+
     return(
         <>
             <div className="col-md-12 mb-3">
@@ -50,7 +55,15 @@ const HomeSlide = ({ data }) => {
                                             - by {itm.auther} 
                                             <small>{ moment(itm.createdOn).fromNow() }</small>
                                         </div>
-                                        <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  /> 
+                                        {/* <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  />  */}
+                                        <Image
+                                            loader={myLoader}
+                                            src= {itm.imgUrl}
+                                            alt= { itm.title }
+                                            width={ 1000 }
+                                            height={500}
+                                            className="images"
+                                        />
                                     </a>
                                 </Link>
                             </div>    

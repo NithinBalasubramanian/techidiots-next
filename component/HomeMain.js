@@ -1,7 +1,10 @@
 import React , { useState , useEffect } from 'react';
+import { NextSeo } from 'next-seo';
+import Head from 'next/head'
 import Link from 'next/link'
 import axios from './apiInstance/Instance_API';
 import moment from 'moment';
+import Image from 'next/image'
 
 // components
 
@@ -32,8 +35,84 @@ const HomeMain = () => {
 
     }
 
+    const myLoader = ({ src, width, quality }) => {
+        return `${src}?w=${width}&q=${quality || 75}`
+    }
+      
+
     return(
         <>
+            {/* <Head>
+                <title>Techidiots - The collection of Tech for Techies</title>
+                <meta name="description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
+                <link rel="canonical" href="https://techidiots.in" />
+                <link rel="icon" href="/favicon.ico"/>
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta charset="utf-8" />
+               
+                <meta property="og:image" content="/techidiots.png"/>
+                <meta property="og:url" content="https://techidiots.in"/>
+                <meta property="og:site_name" content="www.techidiots.in"/>
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="TechIdiots - The Collections of Tech for Techies"/>
+                <meta property="og:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
+
+                <meta property="twitter:url" content="https://techidiots.in/" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+                <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
+                <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
+                
+                <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+                <meta name="theme-color" content="#000000"/>
+                <meta name="robots" content="index,follow"/>
+                <meta name="author" content="Techidiots - Pingifinit"/>
+                <meta name="publisher" content="Techidiots - Pingifinit"/>
+                <meta name="owner" content="Techidiots - Pingifinit"/>
+                <meta name="keywords" content="Techidiots,technews,latest technology, technology,Marketing , tesla , Programming ,Hyundai ,Jaguar ,Facebook ,Cybersecurity ,Remote ,Cloud crypto,bitcoin,Microsoft ,google,apple,blockchain,Ethereum ,youtube , Nithin balasubramanian , rajan karan ,AlphaFold , DeepMind , Artificial Intelligence trends , Martech"/>
+                <meta name="facebook-domain-verification" content="q5r5o0qa0x8ohoxlhfp1xf5itrgkm7" />
+                        
+                <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                <link rel="manifest" href="/site.webmanifest" />
+                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+                <meta name="msapplication-TileColor" content="#da532c" />   
+            </Head> */}
+
+            <NextSeo
+                title="Techidiots - The collection of Tech for Techies"
+                description="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."
+                canonical="https://techidiots.in/"
+                openGraph={{
+                    url: 'https://techidiots.in/',
+                    title: 'Techidiots - The collection of Tech for Techies',
+                    description: 'Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you.',
+                    images: [
+                    {
+                        url: 'https://techidiots.in/techidiots.png',
+                        width: 800,
+                        height: 600,
+                        alt: 'Techidiots - The collection of Tech for Techies',
+                        type: 'image/png',
+                    },
+                    {
+                        url: 'https://techidiots.in/techidiots.png',
+                        width: 900,
+                        height: 800,
+                        alt: 'Techidiots - The collection of Tech for Techies',
+                        type: 'image/pmg',
+                    }
+                    ],
+                    site_name: 'Techidiots',
+                }}
+                twitter={{
+                    handle: '@handle',
+                    site: '@site',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
             <div className={(FetchStatus) ? "preLoader" : "preNone" } >
                 <div className="wrap">
                     <div className="loading">
@@ -65,7 +144,15 @@ const HomeMain = () => {
                                                     - by {itm.auther}
                                                     <small>{moment(itm.createdOn).fromNow()}</small>
                                                 </div>
-                                                <img src={itm.imgUrl} loading="lazy" alt={ itm.title } width="100%"  /> 
+                                                <Image
+                                                loader={myLoader}
+                                                src= {itm.imgUrl}
+                                                alt= { itm.title }
+                                                width={ 1200 }
+                                                height={500}
+                                                className="images"
+                                                />
+                                                {/* <img src={itm.imgUrl} loading="lazy" alt={ itm.title } width="100%"  />  */}
                                                 <p>{ itm.preheading } </p>
                                             </a>  
                                             </Link>
@@ -88,7 +175,16 @@ const HomeMain = () => {
                                                         - by {itm.auther} 
                                                         <small>{ moment(itm.createdOn).fromNow() }</small>
                                                     </div>
-                                                    <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  /> 
+                                                    {/* <img src={itm.imgUrl} loading="lazy"  alt={ itm.title } width="100%"  />  */}
+
+                                                    <Image
+                                                        loader={myLoader}
+                                                        src= {itm.imgUrl}
+                                                        alt= { itm.title }
+                                                        width={ 800 }
+                                                        height={500}
+                                                        className="images"
+                                                    />
                                             </a>
                                             </Link>
                                         </div>    
