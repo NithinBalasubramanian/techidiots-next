@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React , { useState , useEffect } from 'react';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link'
 import axios from '../../../component/apiInstance/Instance_API';
 import moment from 'moment';
@@ -73,7 +74,7 @@ const BlogHead = () => {
                   { datas.map((itm,k) => { 
                       return(
                           <>
-                            <Head>
+                            {/* <Head>
                                 <title>{itm.title}</title>
                                 <link rel="icon" href="/favicon.ico"/>
 
@@ -105,7 +106,41 @@ const BlogHead = () => {
                                 <link rel="manifest" href="/site.webmanifest" />
                                 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
                                 <meta name="msapplication-TileColor" content="#da532c" />
-                            </Head>
+                            </Head> */}
+
+                            <NextSeo
+                                title= {itm.title}
+                                description={itm.preheading} 
+                                canonical={ 'https://techidiots.in/'+blogHead+'/'+blogCont } 
+                                openGraph={{
+                                    url:  'https://techidiots.in/'+blogHead+'/'+blogCont,
+                                    title:  `Techidiots - ${itm.title}`,
+                                    description: itm.preheading,
+                                    images: [
+                                    {
+                                        url: itm.imgUrl,
+                                        width: 800,
+                                        height: 600,
+                                        alt: itm.title,
+                                        type: 'image/png',
+                                    },
+                                    {
+                                        url: itm.imgUrl,
+                                        width: 900,
+                                        height: 800,
+                                        alt: itm.title ,
+                                        type: 'image/pmg',
+                                    }
+                                    ],
+                                    site_name: 'Techidiots',
+                                }}
+                                twitter={{
+                                    handle: '@handle',
+                                    site: '@site',
+                                    cardType: 'summary_large_image',
+                                }}
+                            />
+
 
                           <div className="col-md-12 blogOn">
 
