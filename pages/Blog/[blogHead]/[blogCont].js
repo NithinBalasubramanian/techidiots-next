@@ -62,13 +62,7 @@ const BlogHead = () => {
     return(
         <>
 
-        <Head>
-            <meta property="twitter:url" content="https://techidiots.in/" />
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
-            <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
-            <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
-        </Head>
+       
 
 
         <div className={(FetchStatus) ? "preLoader" : "preNone" } >
@@ -84,6 +78,13 @@ const BlogHead = () => {
                   { datas.map((itm,k) => { 
                       return(
                           <>
+                           <Head>
+                                <meta property="twitter:url" content="https://techidiots.in/" />
+                                <meta property="twitter:card" content="summary_large_image" />
+                                <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+                                <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
+                                <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
+                            </Head>
                             {/* <Head>
                                 <title>{itm.title}</title>
                                 <link rel="icon" href="/favicon.ico"/>
