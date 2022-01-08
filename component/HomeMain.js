@@ -10,7 +10,8 @@ import Image from 'next/image'
 
 import HomeSlide from './HomeSlide';
 
-const HomeMain = () => {
+const HomeMain = (props) => {
+
 
     let [ Listdata , setListdata ] = useState([]);
   
@@ -18,7 +19,7 @@ const HomeMain = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        fetchData();
+        // fetchData();
     },[])
 
     const fetchData =  async () => {
@@ -126,13 +127,14 @@ const HomeMain = () => {
                 <div className="homeListContainer">
                     <div className="row">
 
-
+                    { props.datas &&
+                    <>
                         {/* slider part start*/}
-                        <HomeSlide data={ Listdata } />
+                        <HomeSlide data={ props.datas } />
                         {/* slider part end*/}
                         
                         <div className="col-md-8">
-                        { Listdata.map((itm,k) => {
+                        { props.datas.map((itm,k) => {
                                 if(k === 3 || k === 4  ){
                                     return(
                                         <div className="card_top_home">
@@ -163,7 +165,7 @@ const HomeMain = () => {
                             }
                         </div>
                         <div className="col-md-4">
-                        { Listdata.map((itm,k) => {
+                        { props.datas.map((itm,k) => {
                                 if(k > 4 && k < 9 ){
                                     return(
                                         <div className="card_top_sub_home">
@@ -193,6 +195,8 @@ const HomeMain = () => {
                             })
                             }
                         </div>
+                        </>
+                        }
                         <div className="col-md-12 midAbout">
                             <p>About TechIdiots</p>
                             <h1><span>TechIdiots </span>is developed to give YOU a platform to <span>VIEW</span> and <span>GAIN</span> more information on latest <span>TECH</span> Based NEWS and information all in one . This <span>REFERS</span> information from many<span>TRUSTABLE</span>  resources and <span>PRESENT</span> before YOU .... </h1>
@@ -206,4 +210,29 @@ const HomeMain = () => {
     )
 }
 
+
+
 export default HomeMain
+
+// This gets called on every request
+export const getServerSideProps = (context) => {
+
+    // Fetch data from external API
+
+    // const res = await axios.get('/homeTopFetch')
+    //             .then((res) => {
+    //                 return res.data;
+    //             })
+    //             .catch((error) => {
+    //                 console.log(error);
+    //             })
+  
+    // console.log(res);
+
+    // Pass data to the page via props
+    return { 
+        props : { 
+            name : 'nithin'
+        } 
+    }
+  }

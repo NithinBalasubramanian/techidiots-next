@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.techidiots.in
+
+# Sitemaps
+Sitemap: https://www.techidiots.in/sitemap.xml
+Sitemap: https://www.techidiots.in/server-sitemap.xml

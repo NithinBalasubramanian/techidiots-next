@@ -14,7 +14,9 @@ import { AiOutlineMail  } from 'react-icons/ai'
 
 import { useRouter } from 'next/router'
 
-const BlogHead = () => {
+const BlogHead = (props) => {
+
+    console.log(props);
 
     const router = useRouter();
 
@@ -24,19 +26,19 @@ const BlogHead = () => {
 
     const [ recent , setRecent ] = useState([]);
     
-     let [ FetchStatus , setFetchStatus ] = useState(true);
+     let [ FetchStatus , setFetchStatus ] = useState(false);
     
-    const Fetchdata = () => {
-        axios.get('/view/'+blogCont)
-        .then( res => {
-            setDatas(res.data);
-            setFetchStatus(false);
-            FetchdataNot();
-        })
-        .catch( err => {
-            console.log(err);
-        })
-    }
+    // const Fetchdata = () => {
+    //     axios.get('/view/'+blogCont)
+    //     .then( res => {
+    //         setDatas(res.data);
+    //         setFetchStatus(false);
+    //         FetchdataNot();
+    //     })
+    //     .catch( err => {
+    //         console.log(err);
+    //     })
+    // }
 
     const FetchdataNot = () => {
         axios.get('/recentCategory/'+blogHead+'/'+blogCont)
@@ -49,9 +51,9 @@ const BlogHead = () => {
     }
 
     useEffect(()=>{
-        setFetchStatus(true);
+        // setFetchStatus(true);
         window.scrollTo(0, 0);
-        Fetchdata();
+        // Fetchdata();
         // const timer = setTimeout(() => {
         //     FetchdataNot();
         //   }, 2000);
@@ -71,7 +73,7 @@ const BlogHead = () => {
         </Head>
 
 
-        <div className={(FetchStatus) ? "preLoader" : "preNone" } >
+        <div className={(!props.data) ? "preLoader" : "preNone" } >
             <div className="wrap">
                 <div className="loading">
                     <div className="bounceball"></div>
@@ -80,8 +82,10 @@ const BlogHead = () => {
             </div>
         </div>
         <div className="pageContainer">
+            { props.data &&
+            <>
               <div className="blogContent">
-                  { datas.map((itm,k) => { 
+                  { props.data.map((itm,k) => { 
                       return(
                           <>
                             {/* <Head>
@@ -297,9 +301,39 @@ const BlogHead = () => {
                         })
                     }
               </div>
+            </>
+            }
           </div>
       </>
     )
 }
 
+export const getServerSideProps = async(context) => {
+
+    // Fetch data from external API
+
+    let {  blogCont } = context.query;
+  
+    const res = await axios.get('/view/'+blogCont)
+                .then((res) => {
+                    return res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+  
+  
+    // Pass data to the page via props
+    return { 
+        props : { 
+            data : res
+        } 
+    }
+  }
+
 export default BlogHead
+
+
+
+// This gets called on every request
+
