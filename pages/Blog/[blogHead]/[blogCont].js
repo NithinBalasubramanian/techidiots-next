@@ -188,7 +188,7 @@ const BlogHead = (props) => {
                                   <p style={ {padding:'10px 0px',margin:'0px'} }>{itm.preheading}</p>
                               </div>
                               <div className="byAuth">
-                                  - by {itm.auther} 
+                                  - by {itm.auther}  
                               <small>{ moment(itm.createdOn).fromNow() }</small>
                               </div>
                               {/* <img src={itm.filePath} alt="img" width="100%" height="auto" /> */}
