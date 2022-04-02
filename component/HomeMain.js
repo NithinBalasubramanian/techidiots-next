@@ -84,21 +84,21 @@ const HomeMain = (props) => {
             <NextSeo
                 title="Techidiots - The collection of Tech for Techies"
                 description="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."
-                canonical="https://techidiots.in/"
+                canonical= { process.env.NEXT_PUBLIC_BASE_URL  }
                 openGraph={{
-                    url: 'https://techidiots.in/',
+                    url: process.env.NEXT_PUBLIC_BASE_URL,
                     title: 'Techidiots - The collection of Tech for Techies',
                     description: 'Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you.',
                     images: [
                     {
-                        url: 'https://techidiots.in/techidiots.png',
+                        url: `${ process.env.NEXT_PUBLIC_BASE_URL  }/techidiots.png`,
                         width: 800,
                         height: 600,
                         alt: 'Techidiots - The collection of Tech for Techies',
                         type: 'image/png',
                     },
                     {
-                        url: 'https://techidiots.in/techidiots.png',
+                        url: `${ process.env.NEXT_PUBLIC_BASE_URL  }/techidiots.png`,
                         width: 900,
                         height: 800,
                         alt: 'Techidiots - The collection of Tech for Techies',

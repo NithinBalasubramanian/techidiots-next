@@ -28,7 +28,7 @@ const Footer = () => {
                 </a>
             </div>
             <p className="copyCont">2020 - { Year } - &copy; || All Right Reserved  <br/>
-            <a href="mailto:info@techidiots.in" target="_blank" rel="noreferrer">info@techidiots.in</a> || TECHIDIOTS </p>
+            <a href={`mailto:${process.env.NEXT_PUBLIC_MAIL}`} target="_blank" rel="noreferrer">{process.env.NEXT_PUBLIC_MAIL}</a> || TECHIDIOTS </p>
           </div>
         </footer>
     )

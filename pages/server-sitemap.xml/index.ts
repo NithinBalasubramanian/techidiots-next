@@ -21,7 +21,7 @@ export const getServerSideProps : GetServerSideProps = async (ctx) => {
           })
 
 
-    const fields : ISitemapField[] = data.map(data => ({ loc : `https://techidiots.in/blog/${data.category}/${data.url}`, lastmod : new Date().toISOString() }))
+    const fields : ISitemapField[] = data.map(data => ({ loc : `${ process.env.NEXT_PUBLIC_BASE_URL  }/blog/${data.category}/${data.url}`, lastmod : new Date().toISOString() }))
 
     // console.log(fields);
 

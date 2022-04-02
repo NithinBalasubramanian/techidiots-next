@@ -110,20 +110,20 @@ const Home = () => {
         <Head>
             <title>Techidiots - The collection of Tech for Techies</title>
             <meta name="description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
-            <link rel="canonical" href="https://techidiots.in" />
+            <link rel="canonical" href= { process.env.NEXT_PUBLIC_BASE_URL  }  />
             <link rel="icon" href="/favicon.ico"/>
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <meta charset="utf-8" />
             <meta property="og:image" content="/techidiots.png"/>
-            <meta property="og:url" content="https://techidiots.in"/>
-            <meta property="og:site_name" content="www.techidiots.in"/>
+            <meta property="og:url" content={ process.env.NEXT_PUBLIC_BASE_URL  } />
+            <meta property="og:site_name" content={ process.env.NEXT_PUBLIC_BASE_URLMAIN  }/>
             <meta property="og:type" content="website" />
             <meta property="og:title" content="TechIdiots - The Collections of Tech for Techies"/>
             <meta property="og:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you."/>
 
-            <meta property="twitter:url" content="https://techidiots.in/" />
+            <meta property="twitter:url" content={ process.env.NEXT_PUBLIC_BASE_URL  }  />
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+            <meta property="twitter:image" content= {`${ process.env.NEXT_PUBLIC_BASE_URL  }/techidiots.png`} />
             <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
             <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
             <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />

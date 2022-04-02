@@ -59,15 +59,15 @@ const BlogHead = (props) => {
         //   }, 2000);
     }, [blogCont]) 
 
-    let url = "https://techidiots.in";
+    let url = process.env.NEXT_PUBLIC_BASE_URL;
 
     return(
         <>
 
         <Head>
-            <meta property="twitter:url" content="https://techidiots.in/" />
+            <meta property="twitter:url" content= { process.env.NEXT_PUBLIC_BASE_URL } />
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:image" content="https://techidiots.in/techidiots.png" />
+            <meta property="twitter:image" content= { `${ process.env.NEXT_PUBLIC_BASE_URL }/techidiots.png`} />
             <meta property="twitter:title" content="TechIdiots - The Collections of Tech for Techies" />
             <meta property="twitter:description" content="Techidiots is developed to be a platform to collect latest techology informations from trustable sources and analyse it to present before you." />
         </Head>
@@ -125,21 +125,21 @@ const BlogHead = (props) => {
                             <NextSeo
                                 title= {itm.title}
                                 description={itm.preheading} 
-                                canonical={ 'https://techidiots.in/'+blogHead+'/'+blogCont } 
+                                canonical={ process.env.NEXT_PUBLIC_BASE_URL + '/'+blogHead+'/'+blogCont } 
                                 openGraph={{
-                                    url:  'https://techidiots.in/'+blogHead+'/'+blogCont,
+                                    url:  process.env.NEXT_PUBLIC_BASE_URL + '/'+blogHead+'/'+blogCont,
                                     title:  `Techidiots - ${itm.title}`,
                                     description: itm.preheading,
                                     images: [
                                     {
-                                        url: 'https://techidiots.in/techidiots.png',
+                                        url: process.env.NEXT_PUBLIC_BASE_URL + '/techidiots.png',
                                         width: 800,
                                         height: 600,
                                         alt: itm.title,
                                         type: 'image/png',
                                     },
                                     {
-                                        url: 'https://techidiots.in/techidiots.png',
+                                        url: process.env.NEXT_PUBLIC_BASE_URL + '/techidiots.png',
                                         width: 900,
                                         height: 800,
                                         alt: itm.title ,
