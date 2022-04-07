@@ -1,4 +1,4 @@
-const siteUrl = "https://www.techidiots.in";
+const siteUrl = "https://www.techidiots.tech";
 
 module.exports = {
     siteUrl,
